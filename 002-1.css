@@ -108,6 +108,11 @@ section {
     padding: 50px 20px;
 }
 
+h1, h2, h3{
+    line-height: 1.15;
+    text-wrap: balance;
+}
+
 h2 {
     text-align: center;
     color: #222;
@@ -249,6 +254,27 @@ iframe{
     max-width: 100%;
 }
 
+/* Icons beside text inside contact section */
+#contact p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 10px 0;
+}
+
+#contact p img{
+    flex: 0 0 auto;
+    height: 18px;
+    width: auto;
+}
+
+#contact p a{
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
 /*social*/
 .social {
     background: white;
@@ -261,7 +287,14 @@ iframe{
     width: 120px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.15);
     transition: transform 0.3s, box-shadow 0.3s;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
 }
+
 
 .social:hover {
     transform: translateY(-5px);
@@ -655,6 +688,10 @@ iframe{
     height: 32px;
   }
 
+  body{
+    font-size: 14px;
+  }
+
   .social{
     width: 90px;
     padding: 12px;
@@ -664,6 +701,10 @@ iframe{
   form{
     padding: 16px;
   }
+
+  h1{ font-size: 26px; }
+  h2{ font-size: 22px; }
+  h3{ font-size: 18px; }
 
   .event-h1{
     font-size: 26px;
