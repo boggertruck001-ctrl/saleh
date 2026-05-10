@@ -648,9 +648,9 @@ iframe{
 
   #nav-div-a{
     width: 100%;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: center;
-    gap: 12px;
+    gap: 6px;
   }
 
   nav a{
@@ -703,9 +703,9 @@ iframe{
     padding: 16px;
   }
 
-  h1{ font-size: 26px; }
-  h2{ font-size: 22px; }
-  h3{ font-size: 18px; }
+  h1{ font-size: 24px; }
+  h2{ font-size: 20px; }
+  h3{ font-size: 17px; }
 
   .event-h1{
     font-size: 26px;
