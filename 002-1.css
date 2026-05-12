@@ -135,15 +135,31 @@ section {
     padding: 50px 20px;
 }
 
-h1, h2, h3{
-    line-height: 1.15;
+h1, h2, p {
     text-wrap: balance;
 }
 
-h2 {
-    text-align: center;
-    color: #222;
+h1, h2, h3{
+    line-height: 1.15;
 }
+
+/* General type scale */
+h1{
+    font-size: clamp(2rem, 3.2vw, 2.8rem);
+}
+h2{
+    font-size: clamp(1.4rem, 2.2vw, 2rem);
+}
+p{
+    font-size: clamp(1rem, 1.2vw, 1.125rem);
+    line-height: 1.7;
+}
+
+
+
+
+
+
 
 .services ul {
     list-style: none;
@@ -724,13 +740,11 @@ iframe{
     height: clamp(260px, 60vh, 520px);
   }
 
-  h1 { font-size: 28px; }
-  h2 { font-size: 24px; }
-
   .book-btn { text-align: center; }
 }
 
 @media (max-width: 480px) {
+
   nav {
     padding: 10px;
     gap: 12px;
@@ -761,8 +775,8 @@ iframe{
     padding: 16px;
   }
 
-  h1{ font-size: 24px; }
-  h2{ font-size: 20px; }
+  /* global h1/h2/p sizing handled above */
+
   h3{ font-size: 17px; }
 
   .event-h1{
