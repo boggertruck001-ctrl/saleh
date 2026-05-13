@@ -156,11 +156,6 @@ p{
 }
 
 
-
-
-
-
-
 .services ul {
     list-style: none;
     text-align: center;
@@ -685,7 +680,7 @@ iframe{
     margin-bottom:40px;
 }
 
-.contactp1{
+.contactp1, .formP1{
     text-align:center;
 }
 
@@ -708,6 +703,30 @@ iframe{
     font-size: 20px;
     text-decoration: none;
 }
+
+#to-top{
+    position: fixed;
+    left: 20px;
+    bottom: 20px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(0,0,0,0.75);
+    color: #fff;
+    cursor: pointer;
+    display: grid;
+    place-items: center;
+    font-size: 22px;
+    z-index: 1001;
+    transition: transform .15s ease, background .15s ease;
+}
+
+#to-top:hover{
+    transform: translateY(-3px);
+    background: rgba(0,0,0,0.9);
+}
+
 
 @media (max-width: 768px) {
   nav {
