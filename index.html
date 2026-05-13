@@ -264,13 +264,42 @@
   <h2 class="book-h1">Book an Event</h2>
   <p class="formP1"> Fill in your details below and our team will contact you shortly to plan your perfect event.
   </p>
-  <form>
-    <input type="text" placeholder="Your Name" required>
-    <input type="tel" placeholder="Phone Number" required>
-    <input type="email" placeholder="Email Address" required>
-    <textarea placeholder="Describe your event details..."></textarea>
-    <button class="submit">Submit</button>
+  <form id="booking-form" method="post" action="">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="tel" name="phone" placeholder="Phone Number" required>
+    <input type="email" name="email" placeholder="Email Address" required>
+    <input type="text" name="event" placeholder="event type" required>
+    <textarea name="details" placeholder="Describe your event details..."></textarea>
+    <button class="submit" type="submit">Submit</button>
   </form>
+
+  <script>
+    // Client-side email sending needs a backend/service.
+    // This form is wired to mailto as a fallback for simple demos.
+    const bookingForm = document.getElementById('booking-form');
+    bookingForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+
+
+      const formData = new FormData(bookingForm);
+      const name = formData.get('name') || '';
+      const phone = formData.get('phone') || '';
+      const email = formData.get('email') || '';
+      const event = formData.get('event') || '';
+      const details = formData.get('details') || '';
+
+      const to = 'humphreymaingu@gmail.com'; // <-- change to your receiving email
+      const subject = encodeURIComponent('New Event Booking Request');
+      const body = encodeURIComponent(
+        `Name: ${name}\nPhone: ${phone}\nEmail: ${email}\n Event: ${event}\n details: ${details}`
+      );
+
+      // Opens the user's email app (works best for users with a configured mail client)
+      window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
+    });
+  </script>
+
 </section>
 
 <!--contact-->
@@ -321,8 +350,12 @@
 
 <a href="https://wa.me/255692549026" class="whatsapp">💬</a>
 
+<!--Scroll to top button-->
+<button id="to-top" aria-label="Back to top" title="Back to top" onclick="document.getElementById('home').scrollIntoView({behavior:'smooth', block:'start'});">&#8593;</button>
+
 <!--script-->
 <script>
+
 // INIT INFINITE SLIDERS (clone first image for smooth loop)
 function initInfiniteSliders() {
   document.querySelectorAll('.slider').forEach(slider => {
